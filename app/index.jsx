@@ -8,8 +8,9 @@ const App = () => {
     <SafeAreaView>
       <View>
         <Text>Front Page</Text>
-        <Link href="/login">Login</Link>
-        <Link href="/tabs/Profile">Profile</Link>
+        <Link href="/login" className="text-2xl">
+          Login
+        </Link>
       </View>
     </SafeAreaView>
   );

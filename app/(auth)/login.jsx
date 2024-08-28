@@ -4,7 +4,7 @@ import { icons } from "../../constants";
 import { SafeAreaView } from "react-native-safe-area-context";
 import FormField from "../components/FormField";
 import CustomButton from "../components/CustomButton";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
 import { useState } from "react";
 
 const Login = () => {
@@ -12,6 +12,12 @@ const Login = () => {
     email: "",
     password: "",
   });
+
+  const submit = () => {
+    if (form.email === "rahul@gmail.com" && form.password === "12345678") {
+      router.replace("/Home");
+    }
+  };
 
   return (
     <SafeAreaView className="h-full" style={{ backgroundColor: "#4A1E75" }}>
@@ -40,7 +46,7 @@ const Login = () => {
             handleChangeText={(e) => setForm({ ...form, password: e })}
             otherStyles="mt-4 mb-4"
           />
-          <CustomButton title="LOGIN" handlePress={() => {}} />
+          <CustomButton title="LOGIN" handlePress={submit} />
           <View className="justify-start flex items-center">
             <Text className="text-blue-300 text-base">Forgot Password?</Text>
             <View className="justify-center pt-10 flex-row gap-2">

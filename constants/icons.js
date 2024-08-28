@@ -12,6 +12,7 @@ import calender from '../assets/calender.png';
 import user from '../assets/user.png';
 import marker from '../assets/marker.png';
 import home from '../assets/home.png';
+import search from '../assets/search.png';
 
 export default {
     eye,
@@ -28,4 +29,5 @@ export default {
     user,
     marker,
     home,
+    search,
 }
