@@ -10,6 +10,7 @@ const FormField = ({
   icon,
   handleChangeText,
   otherStyles,
+  placeGray,
 }) => {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -20,10 +21,12 @@ const FormField = ({
       >
         <Image source={icon} className="w-7 h-7 mr-2" />
         <TextInput
-          className="flex-1 text-white text-base"
+          className={`flex-1 text-base ${
+            placeGray ? "text-slate-400" : "text-white"
+          }`}
           value={value}
           placeholder={placeholder}
-          placeholderTextColor="white"
+          placeholderTextColor={placeGray ? `gray` : "white"}
           onChangeText={handleChangeText}
           secureTextEntry={
             (title === "Password" || title === "ConfirmPassword") &&
